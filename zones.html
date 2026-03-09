@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Zones Serrurier Montpellier – Métropole Hérault | Speed Serrurier Montpellier</title><meta name="description" content="Speed Serrurier intervient sur Montpellier et toute la métropole : Castelnau-le-Lez, Lattes, Pérols, Mauguio, Lunel, Juvignac... 24h/24. ☎ 06 07 50 62 42"/><meta name="keywords" content="serrurier Castelnau-le-Lez, serrurier Lattes, serrurier Pérols, serrurier Mauguio, serrurier Lunel, serrurier Juvignac, serrurier Hérault"/><link rel="canonical" href="https://www.speedserrurier-montpellier.fr/zones.html"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Speed Serrurier Montpellier","telephone":"+33607506242","areaServed":["Montpellier","Castelnau-le-Lez","Lattes","Pérols","Mauguio","Lunel","Juvignac","Baillargues"]}</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Zones Serrurier Montpellier – Métropole Hérault | Speed Serrurier Montpellier</title><meta name="description" content="Speed Serrurier intervient sur Montpellier et toute la métropole. 24h/24. ☎ 06 07 50 62 42"/><meta name="keywords" content="serrurier Castelnau-le-Lez, serrurier Lattes, serrurier Pérols, serrurier Mauguio, serrurier Lunel"/><link rel="canonical" href="https://www.speedserrurier-montpellier.fr/zones.html"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Speed Serrurier Montpellier","telephone":"+33607506242","areaServed":["Montpellier","Castelnau-le-Lez","Lattes","Pérols","Mauguio","Lunel","Juvignac"]}</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
 :root {
   --navy: #0d1f3c;
   --gold: #e8a020;
@@ -252,23 +252,117 @@ footer { background: var(--navy); border-top: 3px solid var(--gold); padding: 4r
   .footer-grid { grid-template-columns: 1fr; }
 }
 
-.svc-detail{display:grid;grid-template-columns:1.1fr 0.9fr;gap:3.5rem;align-items:start;padding:3.5rem 0;border-bottom:1px solid var(--border);}
-.svc-detail:last-child{border-bottom:none;}
-.svc-detail-ico{font-size:2.2rem;margin-bottom:0.7rem;}
-.svc-detail h2{font-size:clamp(1.5rem,2.8vw,2rem);}
-.svc-detail p{font-size:0.9rem;color:var(--muted);line-height:1.8;margin-bottom:0.7rem;}
-.svc-detail ul{list-style:none;display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.3rem;}
-.svc-detail ul li{display:flex;align-items:flex-start;gap:0.5rem;font-size:0.87rem;color:var(--muted);}
-.svc-detail ul li::before{content:"✓";color:var(--gold);font-weight:800;flex-shrink:0;margin-top:0.05rem;}
-.aside-box{background:var(--navy);padding:2rem;color:white;position:sticky;top:80px;}
-.aside-box h3{color:white;font-size:1rem;margin-bottom:0.4rem;}
-.aside-box p{color:rgba(255,255,255,0.42);font-size:0.83rem;line-height:1.7;margin-bottom:1.3rem;}
-.aside-box .btn{width:100%;justify-content:center;margin-bottom:0.6rem;font-size:0.85rem;}
-.aside-logo{width:56px;border-radius:8px;background:white;padding:3px;margin:0 auto 1.1rem;display:block;}
-.aside-avail{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,0.07);font-size:0.75rem;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:0.08em;}
-.aside-avail strong{display:block;color:white;font-size:0.85rem;margin-top:0.2rem;letter-spacing:0;text-transform:none;}
-.zones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:3rem;}
-.zone-card{background:white;padding:1.7rem;transition:background 0.2s;}
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px; height: 40px;
+  background: none; border: none; cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block; width: 26px; height: 2px;
+  background: white; border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE NAV DRAWER ── */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--navy);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 0.5rem 0 1rem;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  color: rgba(255,255,255,0.7); text-decoration: none;
+  font-size: 0.95rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  padding: 0.9rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: color 0.2s, background 0.2s;
+}
+.mobile-nav a:hover, .mobile-nav a.active { color: var(--gold); background: rgba(255,255,255,0.03); }
+.mobile-nav a.nav-cta-m {
+  margin: 0.8rem 1.5rem 0;
+  background: var(--gold); color: var(--navy) !important;
+  text-align: center; border-radius: 4px; border: none;
+  font-weight: 800;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width: 900px) {
+  /* Header */
+  .hamburger { display: flex; }
+  nav { display: none !important; }
+  .logo-name strong { font-size: 0.82rem; }
+  .logo-name small { display: none; }
+
+  /* Hero */
+  .hero { min-height: auto; padding: 3rem 0 3rem; }
+  .hero-content { padding: 0 1.2rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero-desc { font-size: 0.92rem; }
+  .hero-btns { flex-direction: column; gap: 0.7rem; }
+  .hero-btns .btn { width: 100%; justify-content: center; }
+  .hero-strip { gap: 0; margin-top: 2.5rem; flex-wrap: wrap; }
+  .hero-kpi { flex: 0 0 50%; padding: 0.8rem 0; }
+  .hero-kpi + .hero-kpi { border-left: none; padding-left: 0; }
+  .hero-kpi:nth-child(2) { border-left: 1px solid rgba(255,255,255,0.08); padding-left: 1.2rem; }
+  .hero-kpi:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.8rem; }
+  .hero-kpi:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.08); border-left: 1px solid rgba(255,255,255,0.08); padding-left: 1.2rem; padding-top: 0.8rem; }
+
+  /* Sections */
+  .section { padding: 3rem 1.2rem; }
+  h2 { font-size: 1.7rem; }
+
+  /* Services grid */
+  .svc-grid { grid-template-columns: 1fr; }
+
+  /* Engagements */
+  .eng-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .eng-kpis { grid-template-columns: 1fr 1fr; }
+
+  /* Avis */
+  .avis-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+  /* Float button */
+  .float-cta { bottom: 1rem; right: 1rem; }
+  .float-phone { font-size: 0.85rem; padding: 0.7rem 1.1rem; }
+
+  /* Urgence bar */
+  .urgence-bar { font-size: 0.8rem; padding: 0.7rem 1rem; }
+
+  /* CTA band */
+  .cta-band { padding: 2.5rem 1.2rem; }
+  .cta-band .btn { width: 100%; justify-content: center; }
+}
+
+@media(max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-kpi { flex: 0 0 50%; }
+  .eng-visual { display: none; }
+}
+
+.page-hero{background:var(--navy);padding:4rem 1.5rem 3rem;}
+.page-hero h1{color:white;font-size:clamp(1.8rem,4vw,3rem);}
+.page-hero p{color:rgba(255,255,255,0.52);max-width:560px;font-size:0.98rem;margin-top:0.7rem;}
+.breadcrumb{display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;}
+.breadcrumb a{color:rgba(255,255,255,0.32);text-decoration:none;font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;}
+.breadcrumb a:hover{color:var(--gold);}
+.breadcrumb span{color:rgba(255,255,255,0.15);font-size:0.78rem;}
+
+.zones-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:3rem;}
+.zone-card{background:white;padding:1.6rem;transition:background 0.2s;}
 .zone-card:hover{background:var(--light);}
 .zone-card h3{font-size:1rem;color:var(--navy);}
 .zone-card p{font-size:0.83rem;color:var(--muted);line-height:1.7;margin:0.3rem 0 1rem;}
@@ -276,31 +370,8 @@ footer { background: var(--navy); border-top: 3px solid var(--gold); padding: 4r
 .qpills{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:2rem;}
 .qpill{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);padding:0.3rem 0.85rem;font-size:0.8rem;color:rgba(255,255,255,0.58);font-weight:500;transition:border-color 0.2s,color 0.2s;}
 .qpill:hover{border-color:var(--gold);color:var(--gold);}
-.rev-masonry{columns:3;column-gap:1.4rem;margin-top:2.5rem;}
-.rev-block{break-inside:avoid;background:var(--light);border-left:3px solid var(--gold);padding:1.6rem;margin-bottom:1.3rem;}
-.rev-stars{color:#f59e0b;font-size:0.82rem;margin-bottom:0.7rem;}
-.rev-txt{font-size:0.87rem;color:var(--text);line-height:1.78;font-style:italic;margin-bottom:1rem;}
-.rev-by{display:flex;align-items:center;gap:0.7rem;}
-.rev-av{width:32px;height:32px;border-radius:50%;background:var(--navy);color:white;font-weight:800;font-size:0.78rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.rev-name{font-weight:700;font-size:0.83rem;color:var(--navy);}
-.rev-meta{font-size:0.7rem;color:var(--muted);}
-.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-top:2.5rem;}
-.cbox{background:var(--navy);padding:2.5rem;}
-.cbox p{color:rgba(255,255,255,0.42);font-size:0.87rem;line-height:1.75;margin-bottom:1.8rem;}
-.cinfo{display:flex;flex-direction:column;gap:1.1rem;}
-.cinfo-row{display:flex;gap:1rem;align-items:flex-start;}
-.cinfo-ic{width:42px;height:42px;background:rgba(232,160,32,0.1);border:1px solid rgba(232,160,32,0.2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
-.cinfo-lbl{font-size:0.68rem;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;}
-.cinfo-val{font-size:0.92rem;font-weight:700;color:white;margin-top:0.1rem;}
-.cinfo-val a{color:white;text-decoration:none;}
-.cinfo-val a:hover{color:var(--gold);}
-.curgence{background:var(--light);border-top:3px solid var(--gold);padding:2.2rem;}
-.curgence h3{font-size:1.4rem;font-weight:800;color:var(--navy);margin-bottom:0.5rem;}
-.curgence p{font-size:0.87rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;}
-.curgence .btn{width:100%;justify-content:center;margin-bottom:0.6rem;}
-@media(max-width:900px){.svc-detail{grid-template-columns:1fr;gap:2rem;}.aside-box{position:static;}.rev-masonry{columns:2;}.contact-layout{grid-template-columns:1fr;}}
-@media(max-width:600px){.rev-masonry{columns:1;}}
-    </style></head><body>
+@media(max-width:600px){.zones-grid{grid-template-columns:1fr;}}
+</style></head><body>
 <div class="float-cta">
   <a href="tel:0607506242" class="float-phone">📞 06 07 50 62 42</a>
 </div>
@@ -321,33 +392,40 @@ footer { background: var(--navy); border-top: 3px solid var(--gold); padding: 4r
       <a href="contact.html" id="nav-contact">Contact</a>
       <a href="tel:0607506242" class="nav-cta">📞 Urgence</a>
     </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-</header><main><section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Accueil</a><span>/</span><span style="color:rgba(255,255,255,0.5);font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em">Zones d'intervention</span></div><h1>Serrurier <span class='gold'>Montpellier</span><br>et toute la métropole</h1><p>Intervention en 20 minutes sur Montpellier et les communes alentour. ☎ 06 07 50 62 42</p></div></section>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html" id="mnav-home">Accueil</a>
+    <a href="services.html" id="mnav-services">Services</a>
+    <a href="zones.html" id="mnav-zones">Zones</a>
+    <a href="avis.html" id="mnav-avis">Avis clients</a>
+    <a href="contact.html" id="mnav-contact">Contact</a>
+    <a href="tel:0607506242" class="nav-cta-m">📞 06 07 50 62 42 — Urgence</a>
+  </div>
+</header><main><section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Accueil</a><span>/</span><span style="color:rgba(255,255,255,0.5);font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em">Zones</span></div><h1>Serrurier <span class='gold'>Montpellier</span><br>et toute la métropole</h1><p>Intervention en 20 minutes sur Montpellier et les communes alentour. ☎ 06 07 50 62 42</p></div></section>
 <section class="section" style="background:var(--light);"><div class="container">
-<div class="eyebrow">Zones couvertes</div><h2>Votre serrurier de <span class="gold">proximité</span> dans l'Hérault</h2><p class="lead">Un seul appel au 06 07 50 62 42 pour vérifier votre zone d'intervention.</p>
+<div class="eyebrow">Zones couvertes</div><h2>Votre serrurier de <span class="gold">proximité</span> dans l'Hérault</h2>
 <div class="zones-grid">
-  <div class="zone-card reveal"><h3>📍 Montpellier Centre</h3><p>Intervention en moins de 15 minutes en centre-ville. Tous quartiers 24h/24.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
-  <div class="zone-card reveal"><h3>📍 Castelnau-le-Lez</h3><p>Serrurier 24h/24. Ouverture de porte et changement serrure en urgence.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
-  <div class="zone-card reveal"><h3>📍 Lattes</h3><p>Intervention rapide sur Lattes et Port Ariane. Dépannage urgence jour et nuit.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
-  <div class="zone-card reveal"><h3>📍 Pérols</h3><p>Serrurier à Pérols — ouverture porte, changement serrure, dépannage 24h/24.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
-  <div class="zone-card reveal"><h3>📍 Mauguio</h3><p>Intervention sur Mauguio. Déplacement rapide, devis gratuit avant intervention.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
-  <div class="zone-card reveal"><h3>📍 Lunel</h3><p>Serrurier à Lunel. Urgence serrurerie 7j/7, nuits et week-ends inclus.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
-  <div class="zone-card reveal"><h3>📍 Juvignac</h3><p>Dépannage à Juvignac. Ouverture porte et remplacement serrure en urgence.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
-  <div class="zone-card reveal"><h3>📍 Baillargues</h3><p>Serrurier à Baillargues. Intervention rapide sur tout type de serrure.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
-  <div class="zone-card reveal"><h3>📍 Grabels</h3><p>Intervention nord Montpellier. Urgence 24h/24 disponible.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
-  <div class="zone-card reveal"><h3>📍 Saint-Jean-de-Védas</h3><p>Serrurier à Saint-Jean-de-Védas. Dépannage et changement serrure rapides.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
-  <div class="zone-card reveal"><h3>📍 Jacou</h3><p>Intervention rapide à Jacou. Ouverture porte et serrurerie urgence 7j/7.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
-  <div class="zone-card reveal"><h3>📍 Vendargues</h3><p>Serrurier à Vendargues — devis gratuit avant chaque déplacement.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
+  <div class="zone-card reveal"><h3>📍 Montpellier Centre</h3><p>Intervention en moins de 15 minutes. Tous quartiers 24h/24.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
+  <div class="zone-card reveal"><h3>📍 Castelnau-le-Lez</h3><p>Serrurier 24h/24. Ouverture et changement serrure en urgence.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
+  <div class="zone-card reveal"><h3>📍 Lattes</h3><p>Intervention rapide sur Lattes et Port Ariane.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
+  <div class="zone-card reveal"><h3>📍 Pérols</h3><p>Ouverture porte, changement serrure, dépannage 24h/24.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
+  <div class="zone-card reveal"><h3>📍 Mauguio</h3><p>Déplacement rapide, devis gratuit avant intervention.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
+  <div class="zone-card reveal"><h3>📍 Lunel</h3><p>Urgence serrurerie 7j/7, nuits et week-ends inclus.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
+  <div class="zone-card reveal"><h3>📍 Juvignac</h3><p>Ouverture porte et remplacement serrure en urgence.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
+  <div class="zone-card reveal"><h3>📍 Baillargues</h3><p>Intervention rapide sur tout type de serrure.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
+  <div class="zone-card reveal"><h3>📍 Grabels</h3><p>Urgence 24h/24 nord Montpellier.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
+  <div class="zone-card reveal"><h3>📍 Saint-Jean-de-Védas</h3><p>Dépannage et changement serrure rapides.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
+  <div class="zone-card reveal"><h3>📍 Jacou</h3><p>Ouverture porte et serrurerie urgence 7j/7.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
+  <div class="zone-card reveal"><h3>📍 Vendargues</h3><p>Devis gratuit avant chaque déplacement.</p><a href="tel:0607506242" class="btn btn-navy">☎ Appeler</a></div>
 </div>
 </div></section>
-<section class="section eng-section"><div class="container">
+<section class="section" style="background:var(--navy);"><div class="container">
   <div class="eyebrow" style="color:var(--gold)">Quartiers de Montpellier</div>
   <h2 style="color:white">Tous les <span class="gold">quartiers</span> couverts</h2>
-  <p class="lead" style="color:rgba(255,255,255,0.42)">Quel que soit votre quartier, nous intervenons rapidement sur Montpellier.</p>
-  <div class="qpills">
-    <span class="qpill">Antigone</span><span class="qpill">Beaux-Arts</span><span class="qpill">Boutonnet</span><span class="qpill">Croix-d'Argent</span><span class="qpill">Figuerolles</span><span class="qpill">Hôpitaux-Facultés</span><span class="qpill">Mosson</span><span class="qpill">Ovalie</span><span class="qpill">Près-d'Arènes</span><span class="qpill">Port Marianne</span><span class="qpill">Montpellier Nord</span><span class="qpill">Les Cévennes</span><span class="qpill">La Paillade</span><span class="qpill">Richter</span><span class="qpill">Écusson</span><span class="qpill">Gambetta</span><span class="qpill">Aiguelongue</span><span class="qpill">Celleneuve</span>
-  </div>
-  <p style="margin-top:2rem;font-size:0.82rem;color:rgba(255,255,255,0.25);line-height:1.9;">Serrurier Montpellier · Serrurier Castelnau-le-Lez · Serrurier Lattes · Serrurier Pérols · Serrurier Mauguio · Serrurier Lunel · Serrurier Juvignac · Serrurier Baillargues · Serrurier Grabels · Serrurier Hérault</p>
+  <div class="qpills"><span class="qpill">Antigone</span><span class="qpill">Beaux-Arts</span><span class="qpill">Boutonnet</span><span class="qpill">Croix-d'Argent</span><span class="qpill">Figuerolles</span><span class="qpill">Hôpitaux-Facultés</span><span class="qpill">Mosson</span><span class="qpill">Ovalie</span><span class="qpill">Près-d'Arènes</span><span class="qpill">Port Marianne</span><span class="qpill">Montpellier Nord</span><span class="qpill">Les Cévennes</span><span class="qpill">La Paillade</span><span class="qpill">Richter</span><span class="qpill">Écusson</span><span class="qpill">Gambetta</span><span class="qpill">Aiguelongue</span><span class="qpill">Celleneuve</span></div>
 </div></section></main>
 <footer>
   <div class="footer-grid">
@@ -387,15 +465,29 @@ footer { background: var(--navy); border-top: 3px solid var(--gold); padding: 4r
   <p class="footer-seo">Serrurier Montpellier · Serrurier urgence Montpellier · Ouverture porte Montpellier · Changement serrure Montpellier · Serrurier 24h Montpellier · Serrurier Castelnau-le-Lez · Serrurier Lattes · Serrurier Pérols · Serrurier Mauguio · Artisan serrurier Hérault 34</p>
 </footer>
 <script>
+// Active nav desktop + mobile
 (function(){
   var p=location.pathname.split('/').pop()||'index.html';
   var m={'index.html':'nav-home','services.html':'nav-services','zones.html':'nav-zones','avis.html':'nav-avis','contact.html':'nav-contact'};
-  var el=document.getElementById(m[p]);
-  if(el)el.classList.add('active');
+  var m2={'index.html':'mnav-home','services.html':'mnav-services','zones.html':'mnav-zones','avis.html':'mnav-avis','contact.html':'mnav-contact'};
+  var el=document.getElementById(m[p]); if(el) el.classList.add('active');
+  var el2=document.getElementById(m2[p]); if(el2) el2.classList.add('active');
 })();
+// Hamburger
+var hbtn=document.getElementById('hamburger');
+var mnav=document.getElementById('mobile-nav');
+if(hbtn && mnav){
+  hbtn.addEventListener('click',function(){
+    var open=mnav.classList.toggle('open');
+    hbtn.classList.toggle('open',open);
+    hbtn.setAttribute('aria-expanded', open);
+  });
+}
+// Reveal
 document.querySelectorAll('.reveal').forEach(function(el){
   new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.1}).observe(el);
 });
+// FAQ
 function toggleFaq(btn){
   var a=btn.nextElementSibling,open=a.classList.contains('open');
   document.querySelectorAll('.faq-a').forEach(function(x){x.classList.remove('open');});
